@@ -7,9 +7,7 @@ const Home: React.FC = () => {
         width: "100%",
         padding: 20,
       }}
-    >
-      <Input />
-    </View>
+    ></View>
   );
 };
 

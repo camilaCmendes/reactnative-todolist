@@ -2,7 +2,11 @@ import { TextInput } from "react-native";
 import * as S from "./styles";
 import { useState } from "react";
 
-export const Input: React.FC = () => {
+interface InputProps {
+  onChange: (value: string) => void;
+}
+
+export const Input: React.FC<InputProps> = (props) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -11,6 +15,7 @@ export const Input: React.FC = () => {
       isFocused={isFocused}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
+      onChangeText={props.onChange}
     ></S.Input>
   );
 };
