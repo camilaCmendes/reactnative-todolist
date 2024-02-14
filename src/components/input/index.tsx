@@ -4,6 +4,7 @@ import { useState } from "react";
 
 interface InputProps {
   onChange: (value: string) => void;
+  value: string;
 }
 
 export const Input: React.FC<InputProps> = (props) => {
@@ -16,6 +17,7 @@ export const Input: React.FC<InputProps> = (props) => {
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       onChangeText={props.onChange}
-    ></S.Input>
+      value={props.value}
+    />
   );
 };

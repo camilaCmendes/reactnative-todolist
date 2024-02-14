@@ -7,6 +7,7 @@ export const Input = styled.TextInput.attrs(({ theme }) => ({
   background-color: ${({ theme }) => theme.colors.gray500};
   border-radius: 6px;
   height: 54px;
+  width: 80%;
   padding: 0 16px;
   color: ${({ theme }) => theme.colors.gray100};
   border: 2px solid

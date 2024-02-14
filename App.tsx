@@ -1,9 +1,8 @@
 import Home from "@/screens/home";
-import { StyleSheet, View } from "react-native";
-import { ThemeProvider } from "styled-components/native";
-import { theme } from "./src/themes/theme";
-import { Layout } from "./App.styles";
 import { Keyboard, TouchableWithoutFeedback } from "react-native";
+import { ThemeProvider } from "styled-components/native";
+import { Layout } from "./App.styles";
+import { theme } from "./src/themes/theme";
 
 export default function App() {
   return (
