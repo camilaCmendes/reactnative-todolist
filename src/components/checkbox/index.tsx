@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native";
 
 interface CheckboxProps {
   isChecked?: boolean;
-  onCheckChange?: (checked: boolean) => void;
+  onCheckChange: (checked: boolean) => void;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
@@ -14,9 +14,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   const [checked, setChecked] = useState(isChecked);
 
   const handlePress = () => {
-    const newChecked = !checked;
-    setChecked(newChecked);
-    onCheckChange?.(newChecked);
+    setChecked(!checked);
+    onCheckChange(!checked);
   };
 
   return (

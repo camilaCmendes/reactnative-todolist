@@ -9,15 +9,17 @@ interface CheckboxProps {
   isChecked?: boolean;
   label: string;
   handleDelete: (id: string) => void;
+  handleCheckChange: (id: string) => void;
 }
 
 export const Task: React.FC<CheckboxProps> = (props) => {
-  const [isChecked, setIsChecked] = useState(false);
-
   return (
     <S.Container id={props.id}>
-      <Checkbox isChecked={props.isChecked} onCheckChange={setIsChecked} />
-      <S.TaskText isChecked={isChecked}>{props.label}</S.TaskText>
+      <Checkbox
+        isChecked={props.isChecked}
+        onCheckChange={() => props.handleCheckChange(props.id)}
+      />
+      <S.TaskText isChecked={props.isChecked}>{props.label}</S.TaskText>
       <TouchableOpacity onPress={() => props.handleDelete(props.id)}>
         <Image source={trashIcon} alt="" style={{ alignSelf: "flex-end" }} />
       </TouchableOpacity>

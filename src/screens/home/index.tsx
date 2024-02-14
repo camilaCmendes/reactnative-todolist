@@ -16,6 +16,7 @@ const Home: React.FC = () => {
     const newTask = {
       id: Date.now().toString(),
       label: inputValue,
+      isChecked: false,
     };
 
     setToDoList((previousState) => [...previousState, newTask]);
@@ -48,6 +49,14 @@ const Home: React.FC = () => {
     );
   };
 
+  const handleCheckChange = (id) => {
+    setToDoList((previousState) =>
+      previousState.map((item) =>
+        item.id === id ? { ...item, isChecked: !item.isChecked } : item
+      )
+    );
+  };
+
   return (
     <>
       <S.Header>
@@ -67,6 +76,8 @@ const Home: React.FC = () => {
               id={item.id}
               label={item.label}
               handleDelete={handleDelete}
+              handleCheckChange={handleCheckChange}
+              isChecked={item.isChecked}
             />
           )}
           ListEmptyComponent={EmptyListComponent}
