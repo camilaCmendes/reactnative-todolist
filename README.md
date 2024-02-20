@@ -11,8 +11,10 @@ Este projeto é uma aplicação Todo List desenvolvida com React Native e Expo, 
 - [TypeScript](https://www.typescriptlang.org/) para adicionar tipagem estática ao projeto, aumentando a qualidade do código e reduzindo a possibilidade de erros.
 
 ## Como Rodar o Projeto
+Para rodar este projeto localmente, certifique-se de ter as seguintes ferramentas instaladas:
 
-Antes de iniciar, certifique-se de que você tem o [Node.js](https://nodejs.org/en/) e o [Expo CLI](https://docs.expo.dev/get-started/installation/) instalados em sua máquina.
+- Node.js (v20.11.1): [Como instalar o Node.js](https://nodejs.org/)
+- Expo CLI (v6.3.10): [Como instalar o ExpoCLI](https://expo.dev/)
 
 1. Clone o repositório para sua máquina local:
 
