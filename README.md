@@ -17,7 +17,7 @@ Antes de iniciar, certifique-se de que você tem o [Node.js](https://nodejs.org/
 1. Clone o repositório para sua máquina local:
 
 ```
-git clone https://seu-repositorio/my-app.git
+git clone https://github.com/camilaCmendes/reactnative-todolist.git
 cd my-app
 ```
 
