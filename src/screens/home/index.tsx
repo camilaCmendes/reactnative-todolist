@@ -1,60 +1,26 @@
-import { Button, Input, Task } from "@/components";
-import { FlatList, Image, Text, View } from "react-native";
+import { Button, Input } from "@/components";
+import { Image } from "react-native";
 import logo from "../../../assets/logo.png";
-import clipeboard from "../../../assets/clipboard.png";
-
-import * as S from "./styles";
+import useToDoListStore from "@/stores/useToDoList";
 import { useState } from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "styled-components/native";
+import { TaskList } from "./components";
+import * as S from "./styles";
 
 const Home: React.FC = () => {
   const theme = useTheme();
+  const { toDoList, addToDo, deleteTask, toggleCheck, countCompletedTasks } =
+    useToDoListStore();
   const [inputValue, setInputValue] = useState("");
-  const [toDoList, setToDoList] = useState([]);
 
-  const handleButtonPress = () => {
+  const addNewItemToDo = () => {
     const newTask = {
       id: Date.now().toString(),
       label: inputValue,
       isChecked: false,
     };
-
-    setToDoList((previousState) => [...previousState, newTask]);
+    addToDo(newTask);
     setInputValue("");
-  };
-
-  const handleDelete = (id) => {
-    setToDoList((previousState) => {
-      return previousState.filter((item) => item.id != id);
-    });
-  };
-
-  const EmptyListComponent = () => {
-    return (
-      <View
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
-        <Image source={clipeboard} alt="" style={{ marginBottom: 16 }} />
-        <Text style={{ color: theme.colors.gray100, fontWeight: "bold" }}>
-          Você ainda não tem tarefas cadastradas
-        </Text>
-        <Text style={{ color: theme.colors.gray100 }}>
-          Crie tarefas e organize seus itens a fazer
-        </Text>
-      </View>
-    );
-  };
-
-  const handleCheckChange = (id) => {
-    setToDoList((previousState) =>
-      previousState.map((item) =>
-        item.id === id ? { ...item, isChecked: !item.isChecked } : item
-      )
-    );
   };
 
   return (
@@ -64,23 +30,23 @@ const Home: React.FC = () => {
       </S.Header>
       <S.AddItemContainer>
         <Input onChange={setInputValue} value={inputValue} />
-        <Button onPress={handleButtonPress} />
+        <Button onPress={addNewItemToDo} />
       </S.AddItemContainer>
       <S.Container>
-        <FlatList
-          data={toDoList}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Task
-              key={item.id.toString()}
-              id={item.id}
-              label={item.label}
-              handleDelete={handleDelete}
-              handleCheckChange={handleCheckChange}
-              isChecked={item.isChecked}
-            />
-          )}
-          ListEmptyComponent={EmptyListComponent}
+        <S.ContainerToDoListStatus>
+          <S.TextStatus color={theme.colors.primary}>
+            Tarefas {toDoList.length}
+          </S.TextStatus>
+          <S.TextStatus color={theme.colors.secondary}>
+            Concluídas {countCompletedTasks()}
+          </S.TextStatus>
+        </S.ContainerToDoListStatus>
+        <TaskList
+          toDoList={toDoList}
+          toggleCheck={(id) => toggleCheck(id)}
+          deleteTask={(id) => {
+            deleteTask(id);
+          }}
         />
       </S.Container>
     </>
