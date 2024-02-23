@@ -1,8 +1,11 @@
 # Todo List App
 
 Este projeto é uma aplicação Todo List desenvolvida com React Native e Expo, projetada para ser simples, porém funcional. A aplicação permite aos usuários adicionar, listar e remover tarefas de uma lista de afazeres, proporcionando uma interface limpa e intuitiva.
+<div  align="center">
+  <img width="200" src="https://github.com/camilaCmendes/reactnative-todolist/assets/44913787/74797f8b-82ee-4da6-ae06-c11faec70cab" alt="animated" />
+</div>
+## Tecnologias Utilizadas!
 
-## Tecnologias Utilizadas
 
 - [React Native](https://reactnative.dev/) para o desenvolvimento da aplicação móvel.
 - [Expo](https://expo.dev/) para facilitar o desenvolvimento e a construção do projeto.
