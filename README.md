@@ -4,6 +4,7 @@ Este projeto é uma aplicação Todo List desenvolvida com React Native e Expo, 
 <div  align="center">
   <img width="200" src="https://github.com/camilaCmendes/reactnative-todolist/assets/44913787/74797f8b-82ee-4da6-ae06-c11faec70cab" alt="animated" />
 </div>
+
 ## Tecnologias Utilizadas!
 
 
