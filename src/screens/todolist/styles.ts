@@ -9,13 +9,8 @@ export const Header = styled.View`
 `;
 
 export const Container = styled.View`
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 8px;
   width: 100%;
-  padding: 30px;
-  gap: 30px;
 `;
 
 export const AddItemContainer = styled.View`
