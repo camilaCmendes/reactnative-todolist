@@ -16,6 +16,8 @@ export const Container = styled.View`
   width: 100%;
   padding: 30px;
   gap: 30px;
+  background-color: ${({ theme }) => theme.colors.gray600};
+  height: 100%;
 `;
 
 export const AddItemContainer = styled.View`

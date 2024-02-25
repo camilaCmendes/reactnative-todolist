@@ -7,7 +7,7 @@ import { useTheme } from "styled-components/native";
 import { TaskList } from "./components";
 import * as S from "./styles";
 
-const Home: React.FC = () => {
+const TodoList: React.FC = () => {
   const theme = useTheme();
   const { toDoList, addToDo, deleteTask, toggleCheck, countCompletedTasks } =
     useToDoListStore();
@@ -53,4 +53,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default TodoList;

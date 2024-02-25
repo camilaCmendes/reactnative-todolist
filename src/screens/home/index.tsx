@@ -18,6 +18,7 @@ const Home: React.FC = () => {
         <Button onPress={() => null} label="+ Todo" size="lg" />
         {MOCK_TODOLIST.map((item, index) => (
           <Button
+            key={item}
             onPress={() => null}
             label={item}
             size="lg"
@@ -28,5 +29,4 @@ const Home: React.FC = () => {
     </>
   );
 };
-
 export default Home;
