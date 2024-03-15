@@ -33,5 +33,5 @@ npm install
 ```
 2. Inicie a aplicação com Expo:
 ```
-npm start
+npm run start
 ```
